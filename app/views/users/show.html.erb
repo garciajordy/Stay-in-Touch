@@ -24,6 +24,11 @@
         </div>
         <div>
             <h3>Sent request</h3>
+            <% @sent.each do |mess| %>
+            <ul>
+                <li><%= User.find(mess.user_id).name %></li>
+            </ul>
+            <% end %>
         </div>
         <div>
             <h3>Friends</h3>
