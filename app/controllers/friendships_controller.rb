@@ -1,20 +1,20 @@
 class FriendshipsController < ApplicationController
-    def new
-    end
+
 
     def create
-        @friendship = current_user.friendships.create(user_id:current_user.id,friendship_params)
-        redirect_to users_path
+        @user = User.find(params[:format])
+        @friendship = current_user.friendships.create(friend_id: params[:format])
+        if @friendship.save
+           redirect_to user_path(params[:format])
+        else
+           redirect_to users_path
+        end
     end
 
     def destroy
+        @friendship = Friendship.where(friend_id: params[:id]).where(user_id: current_user.id).first
         @friendship = Friendship.find(params[:id])
         @friendship.destroy
         redirect_to users_path
     end
-
-    private
-      def friendship_params
-        params.require(:friendship).permit(:friend_id)
-      end
 end

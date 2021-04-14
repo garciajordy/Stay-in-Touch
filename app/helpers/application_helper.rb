@@ -17,9 +17,10 @@ module ApplicationHelper
   end
 
   def friend_or_unfriend_btn(user)
-    friend = (Friendship.where(user_id: user.id, friend_id: current_user.id).or(Friendship.where(user_id: current_user.id, friend_id: user.id))).first
+    @user = User.find(user.id)
+    friend = (Friendship.where(user_id: @user.id, friend_id: current_user.id).or(Friendship.where(user_id: current_user.id, friend_id: user.id))).first
     if friend
-      link_to('unfriend!', friendship_path(friend), method: :delete)
+      link_to('Cancel request', friendship_path(friend), method: :delete)
     else
       link_to('Add friend', friendships_path(user), method: :post)
     end
