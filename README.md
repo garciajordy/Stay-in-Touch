@@ -47,6 +47,7 @@ Setup database with:
    rails db:create
    rails db:migrate
 ```
+
 ## Rspec testing
  > To test all models, write the following in your terminal:
  ```
@@ -55,6 +56,7 @@ $ rspec spec/models/user_spec.rb
 ```
 $ rspec spec/models/friendship_spec.rb
 ```
+
 ## Usage
 
 Start server with:
@@ -84,6 +86,7 @@ Open `http://localhost:3000/` in your browser.
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
+
 
 - Hat tip to anyone whose code was used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 - Inspiration
