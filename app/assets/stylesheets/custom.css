@@ -26,6 +26,7 @@
   text-align: center;
   border-left: black solid 2px;
   min-height: 80vh;
+  margin-left: 2rem;
 }
 
 .user-section body {
