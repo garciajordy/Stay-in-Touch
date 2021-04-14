@@ -14,16 +14,22 @@
         </article>
     </section>
     <div class="pending-con">
-       <div>
-           <h3>Pending request</h3>
-           <% @pending.each do |mess| %>
-           <ul>
-           <li><%= User.find(mess.user_id).name %></li>
-        </ul>
-           <% end %>
-       </div> 
-       <div>
-           <h3>Sent request</h3>
-       </div>
+        <div>
+            <h3>Pending request</h3>
+            <% @pending.each do |mess| %>
+            <ul>
+                <li><%= User.find(mess.user_id).name %><%= accept_btn(User.find(mess.user_id))%><%=decline_btn(User.find(mess.user_id))%></li>
+            </ul>
+            <% end %>
+        </div>
+        <div>
+            <h3>Sent request</h3>
+        </div>
+        <div>
+            <h3>Friends</h3>
+            <% @user.friends.each do |friend|%>
+            <%= friend.name%>
+            <%end%>
+        </div>
     </div>
 </div>

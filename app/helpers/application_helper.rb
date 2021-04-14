@@ -30,4 +30,16 @@ module ApplicationHelper
       link_to('Add friend', friendships_path(user), class: "btn btn-outline-success btn-sm ml-3", method: :post)
     end
   end
+
+  def decline_btn(user)
+    @user = User.find(user.id)
+    friend = Friendship.where(user_id: user.id).where(friend_id: current_user.id).first
+      link_to('Cancel', friendship_path(friend), class: "btn btn-outline-danger btn-sm ml-3", method: :delete)
+  end
+
+  def accept_btn(user)
+    @user = User.find(user.id)
+    friend = Friendship.where(user_id: user.id).where(friend_id: current_user.id).first
+    link_to('Accept', friendship_path(friend), class: "btn btn-outline-success btn-sm ml-3", method: :patch)
+  end
 end

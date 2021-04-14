@@ -4,6 +4,7 @@
     <span class="profile-link">
         <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
     </span>
+    <% @friends = user.friends.include?(current_user)%>
     <% if user.id != current_user.id && !@friends  %>
     <%= friend_or_unfriend_btn(user) %>
     <% end %>
