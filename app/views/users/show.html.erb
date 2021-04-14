@@ -1,6 +1,7 @@
 <div class="user-page">
     <section class="user-section">
         <h2><%= "Name: #{@user.name}" %></h2>
+        <h2><%= "Name: #{@user.email}" %></h2>
         <% @friends = @user.friends.include?(current_user) %>
         <% if @user.id != current_user.id && !@friends  %>
         <%= friend_or_unfriend_btn(@user) %>
@@ -13,6 +14,16 @@
         </article>
     </section>
     <div class="pending-con">
-        hello
+       <div>
+           <h3>Pending request</h3>
+           <% @pending.each do |mess| %>
+           <ul>
+           <li><%= User.find(mess.user_id).name %></li>
+        </ul>
+           <% end %>
+       </div> 
+       <div>
+           <h3>Sent request</h3>
+       </div>
     </div>
 </div>
