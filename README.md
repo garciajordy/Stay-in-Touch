@@ -18,9 +18,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+Ruby: 2.6.3    
+Rails: 5.2.3   
+Postgres: >=9.5    
+Rspec gem
 
 ### Setup
 
@@ -37,17 +38,18 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
 
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
+## Rspec testing
+ > To test all models, write the following in your terminal:
+ ```
+$ rspec spec/models/user_spec.rb
+```
+```
+$ rspec spec/models/friendship_spec.rb
+```
 
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+## Usage
 
-
-### Usage
 
 Start server with:
 
@@ -85,9 +87,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
 
-## 📝 License
+- Hat tip to anyone whose code was used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+- Inspiration
+- etc
+
 
 TBA
 
