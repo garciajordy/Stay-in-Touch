@@ -104,4 +104,10 @@ module ApplicationHelper
 
     friend_or_unfriend_btn(new1)
   end
+
+  def user_page_btn
+    return unless current_user
+
+    (menu_link_to "#{current_user.name}'s page", user_path(current_user)).html_safe
+  end
 end
