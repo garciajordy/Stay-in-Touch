@@ -61,6 +61,13 @@ module ApplicationHelper
     end
   end
 
+  def unfriend_btn(user)
+    friend = Friendship.where(user_id: [current_user.id,
+                                        user.id]).where(friend_id: [current_user.id,
+                                                                    user.id]).where(confirmed: true).first
+    link_to('Unfriend', friendship_path(friend), class: 'btn btn-outline-danger btn-sm ml-3', method: :delete)
+  end
+
   def decline_btn(user, current)
     return unless current_user.id == current.id
 

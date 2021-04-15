@@ -37,7 +37,7 @@
             <h3>Friends</h3>
             <% @user.friends.each do |friend|%>
             <ul>
-                <li><%= friend.name%></li>
+                <li><%= friend.name%><%= unfriend_btn(friend)%></li>
             </ul>
             <%end%>
         </div>
