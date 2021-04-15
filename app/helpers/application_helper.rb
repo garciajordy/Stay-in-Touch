@@ -61,14 +61,14 @@ module ApplicationHelper
     end
   end
 
-  def decline_btn(user,current)
+  def decline_btn(user, current)
     return unless current_user.id == current.id
 
     friend = Friendship.where(user_id: user.id).where(friend_id: current_user.id).first
     link_to('Cancel', friendship_path(friend), class: 'btn btn-outline-danger btn-sm ml-3', method: :delete)
   end
 
-  def accept_btn(user,current)
+  def accept_btn(user, current)
     return unless current_user.id == current.id
 
     friend = Friendship.where(user_id: user.id).where(friend_id: current_user.id).first
