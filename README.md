@@ -24,7 +24,7 @@ Rspec gem
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 $ bundle install
