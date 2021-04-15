@@ -16,7 +16,9 @@
     <div class="pending-con">
         <% if current_user.id == @user.id %>
         <div>
+            <% if @pending.any?%>
             <h3>Pending request</h3>
+            <% end %>
             <% @pending.each do |mess| %>
             <ul>
                 <li><%= User.find(mess.user_id).name %><%= accept_btn(User.find(mess.user_id))%><%=decline_btn(User.find(mess.user_id))%></li>
@@ -24,10 +26,13 @@
             <% end %>
         </div>
         <div>
+            <% if @sent.any?%>
             <h3>Sent request</h3>
+            <% end %>
             <% @sent.each do |mess| %>
             <ul>
-                <li><%= User.find(mess.user_id).name %></li>
+                <li><%= User.find(mess.friend_id).name %> <%=friend_or_unfriend_btn(User.find(mess.friend_id))%></li>
+
             </ul>
             <% end %>
         </div>
@@ -35,7 +40,9 @@
         <div>
             <h3>Friends</h3>
             <% @user.friends.each do |friend|%>
-            <%= friend.name%>
+            <ul>
+            <li><%= friend.name%></li>
+            </ul>
             <%end%>
         </div>
     </div>
