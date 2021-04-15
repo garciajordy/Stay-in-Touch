@@ -19,7 +19,7 @@
             <% @pending.each do |mess| %>
             <ul>
                 <% @new = User.find(mess.user_id)%>
-                <li><%= pending_name(@user,@new) %><%= accept_btn(@new)%><%=decline_btn(@new)%></li>
+                <li><%= pending_name(@user,@new) %><%= accept_btn(@new,@user)%><%=decline_btn(@new,@user)%></li>
             </ul>
             <% end %>
         </div>
