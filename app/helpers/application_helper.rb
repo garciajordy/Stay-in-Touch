@@ -50,7 +50,7 @@ module ApplicationHelper
 
   def friend_or_unfriend_btn(user)
     @check = Friendship.where(user_id: user.id).where(friend_id: current_user.id).first
-    return unless user.id != current_user.id && !@friends && !@check
+    return unless user.id != current_user.id && !@friends && !@check && !user.friends.include?(current_user)
 
     friend = Friendship.where(user_id: current_user.id).where(friend_id: user.id).where(confirmed: nil).first
     if friend
