@@ -11,8 +11,4 @@ class UsersController < ApplicationController
     @sent = Friendship.where(user_id: current_user.id).where(confirmed: nil)
     @pending = Friendship.where(friend_id: current_user.id).where(confirmed: nil)
   end
-
-
-
-  
 end
