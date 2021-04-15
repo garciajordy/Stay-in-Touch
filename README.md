@@ -28,9 +28,10 @@ $ cd ror-social-scaffold
 ```
 ## Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+Ruby: 2.6.3    
+Rails: 5.2.3   
+Postgres: >=9.5    
+Rspec gem
 
 ## Setup
 
@@ -45,6 +46,15 @@ Setup database with:
 ```
    rails db:create
    rails db:migrate
+```
+
+## Rspec testing
+ > To test all models, write the following in your terminal:
+ ```
+$ rspec spec/models/user_spec.rb
+```
+```
+$ rspec spec/models/friendship_spec.rb
 ```
 
 ## Usage
@@ -77,7 +87,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used.
+
+- Hat tip to anyone whose code was used.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 - Inspiration
 - etc
 
